@@ -81,6 +81,6 @@ CREATE TABLE Devise(
 -- Taux Dynamique
 CREATE TABLE HISTORIQUEDEVISE(
     id SERIAL PRIMARY KEY,
-    idDevise int reference TauxDevise(id),
+    idDevise int reference Devise(id),
     Taux double precision
 );

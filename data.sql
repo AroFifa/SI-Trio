@@ -50,3 +50,15 @@ INSERT INTO ComptePrimaire (numero,intitule) VALUES
 -- CaractereCompte
 -- INSERT INTO CaractereCompte (nombre) VALUES
 -- (8);
+
+
+
+-- Insertion Devise
+Insert into Devise(Nom) values ('Euro');
+Insert into Devise(Nom) values ('Dollar');
+Insert into Devise(Nom) values ('Ariary');
+
+-- Inesrtion Historique Devise
+Insert into HistoriqueDevise(idDevise,Taux) values ((Select id from Devise where Nom='Euro'),4000);
+Insert into HistoriqueDevise(idDevise,Taux) values ((Select id from Devise where Nom='Dollar'),3500);
+Insert into HistoriqueDevise(idDevise,Taux) values ((Select id from Devise where Nom='Ariary'),1);
