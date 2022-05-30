@@ -67,3 +67,20 @@ CREATE TABLE Ecriture(
     debit money not null default 0,
     credit money not null default 0
 );
+
+
+
+
+-- Devise
+CREATE TABLE Devise(
+    id SERIAL PRIMARY KEY,
+    Nom varchar(30)
+);
+
+
+-- Taux Dynamique
+CREATE TABLE HISTORIQUEDEVISE(
+    id SERIAL PRIMARY KEY,
+    idDevise int reference TauxDevise(id),
+    Taux double precision
+);
