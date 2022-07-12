@@ -23,7 +23,10 @@ class LivreC extends CI_Controller
     {
 
         $this->load->model('LivreModel');
-        $data['mouvements']=$this->LivreModel->read_mouvement($this->input->get("num"));
+
+        $idexo = $this->session->exo;
+
+        $data['mouvements']=$this->LivreModel->read_mouvement($idexo,$this->input->get("num"));
 
         $data['model'] = 'livre';
         $data['contents'] = 'mouvement';
