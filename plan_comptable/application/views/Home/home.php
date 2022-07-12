@@ -70,7 +70,7 @@
                 <div class="col-lg-4">
                     <a href="<?php echo site_url('livreC/liste') ?>">
                         <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
-                            <div class="d-flex features-icons-icon"><i class="fas fa-newspaper m-auto text-primary" data-bss-hover-animate="pulse"></i></div>
+                            <div class="d-flex features-icons-icon"><i class="fas fa-balance-scale m-auto text-primary" data-bss-hover-animate="pulse"></i></div>
                             <h3 style="font-family: Rufina, serif;">Balance</h3>
                         </div>
                     </a>
@@ -80,6 +80,14 @@
                         <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
                             <div class="d-flex features-icons-icon"><i class="fas fa-money-check m-auto text-primary" data-bss-hover-animate="pulse"></i></div>
                             <h3 style="font-family: Rufina, serif;">Devise</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4">
+                    <a href="<?php echo site_url('EtatFinancierC/bilan') ?>">
+                        <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
+                            <div class="d-flex features-icons-icon"><i class="fas fa-newspaper m-auto text-primary" data-bss-hover-animate="pulse"></i></div>
+                            <h3 style="font-family: Rufina, serif;">Etats financiers</h3>
                         </div>
                     </a>
                 </div>
