@@ -34,7 +34,9 @@ group by numero,intitule,annee,debut,fin,Exercice.id;
 
 -- VIEW v_mouvement
 CREATE OR REPLACE VIEW v_mouvement as
-select getdate(debut,fin,jour,mois) date,debut,fin,journal.libelle code_journal,Tiers.numero num_tiers,Tiers.nom nom_tiers,refpiece,jour,mois,compte.numero num_compte, compte.intitule intitule,ecriture.libelle,debit,credit
+select getdate(debut,fin,jour,mois) date,
+debut,fin,journal.libelle code_journal,Tiers.numero num_tiers,Tiers.nom nom_tiers,refpiece,jour,mois,
+compte.numero num_compte, compte.intitule intitule,ecriture.libelle,debit,credit,Exercice.id idexo
 from ecriture
 join Exercice on Exercice.id = ecriture.idexercice
 join Compte on ecriture.idcompte = compte.id
@@ -94,3 +96,23 @@ SELECT v.*,SUM(v.debit) OVER (PARTITION BY v.*) mvd,SUM(v.credit) OVER (PARTITIO
 
 
 
+-- View_bilan
+-- View_actifs_nonCourants
+CREATE OR REPLACE View View_actifs_nonCourants AS 
+SELECT num_compte,intitule,debit::decimal(18,2) montant,idexo from View_grandlivre where num_compte like '13%' or num_compte like '2%' and num_compte not like '28%' and num_compte not like  '29%' order by num_compte ASC;
+
+-- View_actifs_courants
+CREATE OR REPLACE View View_actifs_courants AS 
+SELECT num_compte,intitule,debit::decimal(18,2) montant,idexo from View_grandlivre where debit!=0::money and ((num_compte like '4%' and num_compte not like '49%'  ) or (num_compte like '5%' and num_compte not like '59%')) or (num_compte like '3%' and num_compte not like '39%') order by num_compte ASC;
+
+-- View_capitaux
+CREATE OR REPLACE View View_capitaux AS 
+SELECT num_compte,intitule,credit::decimal(18,2) montant,idexo from View_grandlivre where credit!=0::money and (num_compte like '1%' and (num_compte not like '13%' and num_compte not like '16%')  ) order by num_compte ASC;
+
+-- View_passifs_nonCourants
+CREATE OR REPLACE View View_passifs_nonCourants AS 
+SELECT num_compte,intitule,credit::decimal(18,2) montant,idexo from View_grandlivre where credit!=0::money and (num_compte like '28%' or num_compte like '_9%') order by num_compte ASC;
+
+-- View_passifs_courants
+CREATE OR REPLACE View View_passifs_courants AS 
+SELECT num_compte,intitule,credit::decimal(18,2) montant,idexo from View_grandlivre where credit!=0::money and ((num_compte like '4%' and num_compte not like '49%'  ) or (num_compte like '5%' and num_compte not like '59%')) or num_compte like '16%' order by num_compte ASC;
