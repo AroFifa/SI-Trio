@@ -106,12 +106,6 @@
                             <th></th>
                             <th class="table-active"><?php echo $SANC + $SAC; ?></th>
                         </tr>
-                        <tr>
-                            <th></th>
-                        </tr>
-                        <tr>
-                            <th></th>
-                        </tr>
                     </tbody>
                 </table>
             </div>
