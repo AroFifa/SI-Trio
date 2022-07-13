@@ -33,105 +33,112 @@
             </div>
         </nav>
     </header>
-    <div>
-        <div class="container" style="margin-top: 10pc; background-color: #eee;">
-            <div style="background-color: #ddd; border-radius: 20px;">
-                <br>
-                <h5><strong>Compte: </strong> <?php echo $mouvements[0]["num_compte"]; ?></h5>
-                <h6><strong>Intitulé: </strong> <?php echo $mouvements[0]["intitule"]; ?></h6>
-                <br>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <h1>Debit</h1>
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Date</th>
-                                    <th>Tiers</th>
-                                    <th>Libellé</th>
-                                    <th>Montant</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                                <?php foreach ($mouvements as $view) {
-                                    if ($view['debit'] != 0) { ?>
-                                        <tr>
-                                            <td scope="row"><?php echo $view['date'] ?></td>
-                                            <td scope="row"><?php echo $view['nom_tiers'] ?></td>
-                                            <td scope="row"><?php echo $view['libelle'] ?></td>
-                                            <th><?php echo $view['debit'] ?></th>
-                                        </tr>
-                                <?php }
-                                } ?>
-                            </tbody>
-                            <?php if (count($mouvements) != 0) {
-                                if ($mouvements[0]['debit'] != 0) {
-                            ?>
-                                    <tfoot>
-                                        <tr>
-                                            <th scope="col"></th>
-                                            <th scope="col"></th>
-                                            <th scope="col">Totale: </th>
-                                            <th scope="col"><?php echo $mouvements[0]['mvd'] ?></th>
-                                        </tr>
-                                    </tfoot>
-                            <?php
-                                }
-                            }
-                            ?>
-                        </table>
-                    </div>
+    <?php
+    if (!isset($error)) { ?>
+        <div>
+            <div class="container" style="margin-top: 10pc; background-color: #eee;">
+                <div style="background-color: #ddd; border-radius: 20px;">
+                    <br>
+                    <h5><strong>Compte: </strong> <?php echo $mouvements[0]["num_compte"]; ?></h5>
+                    <h6><strong>Intitulé: </strong> <?php echo $mouvements[0]["intitule"]; ?></h6>
+                    <br>
                 </div>
-                <div class="col-md-6">
-                    <h1>credit</h1>
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Date</th>
-                                    <th>Tiers</th>
-                                    <th>Libellé</th>
-                                    <th>Montant</th>
-                                </tr>
-                            </thead>
-                            <tbody>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h1>Debit</h1>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Tiers</th>
+                                        <th>Libellé</th>
+                                        <th>Montant</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
 
-                                <?php foreach ($mouvements as $view) {
-                                    if ($view['credit'] != 0) { ?>
-                                        <tr>
-                                            <td scope="row"><?php echo $view['date'] ?></td>
-                                            <td scope="row"><?php echo $view['nom_tiers'] ?></td>
-                                            <td scope="row"><?php echo $view['libelle'] ?></td>
-                                            <th><?php echo $view['credit'] ?></th>
-                                        </tr>
-                                <?php }
-                                } ?>
-                            </tbody>
-                            <?php if (count($mouvements) != 0) {
-                                if ($mouvements[0]['credit'] != 0) {
-                            ?>
-                                    <tfoot>
-                                        <tr>
-                                            <th scope="col"></th>
-                                            <th scope="col"></th>
-                                            <th scope="col">Totale: </th>
-                                            <th scope="col"><?php echo $mouvements[0]['mvc'] ?></th>
-                                        </tr>
-                                    </tfoot>
-                            <?php
+                                    <?php foreach ($mouvements as $view) {
+                                        if ($view['debit'] != 0) { ?>
+                                            <tr>
+                                                <td scope="row"><?php echo $view['date'] ?></td>
+                                                <td scope="row"><?php echo $view['nom_tiers'] ?></td>
+                                                <td scope="row"><?php echo $view['libelle'] ?></td>
+                                                <th><?php echo $view['debit'] ?></th>
+                                            </tr>
+                                    <?php }
+                                    } ?>
+                                </tbody>
+                                <?php if (count($mouvements) != 0) {
+                                    if ($mouvements[0]['debit'] != 0) {
+                                ?>
+                                        <tfoot>
+                                            <tr>
+                                                <th scope="col"></th>
+                                                <th scope="col"></th>
+                                                <th scope="col">Totale: </th>
+                                                <th scope="col"><?php echo $mouvements[0]['mvd'] ?></th>
+                                            </tr>
+                                        </tfoot>
+                                <?php
+                                    }
                                 }
-                            }
-                            ?>
-                        </table>
+                                ?>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h1>credit</h1>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Tiers</th>
+                                        <th>Libellé</th>
+                                        <th>Montant</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <?php foreach ($mouvements as $view) {
+                                        if ($view['credit'] != 0) { ?>
+                                            <tr>
+                                                <td scope="row"><?php echo $view['date'] ?></td>
+                                                <td scope="row"><?php echo $view['nom_tiers'] ?></td>
+                                                <td scope="row"><?php echo $view['libelle'] ?></td>
+                                                <th><?php echo $view['credit'] ?></th>
+                                            </tr>
+                                    <?php }
+                                    } ?>
+                                </tbody>
+                                <?php if (count($mouvements) != 0) {
+                                    if ($mouvements[0]['credit'] != 0) {
+                                ?>
+                                        <tfoot>
+                                            <tr>
+                                                <th scope="col"></th>
+                                                <th scope="col"></th>
+                                                <th scope="col">Totale: </th>
+                                                <th scope="col"><?php echo $mouvements[0]['mvc'] ?></th>
+                                            </tr>
+                                        </tfoot>
+                                <?php
+                                    }
+                                }
+                                ?>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <footer class="footer" style="max-height: 50px;">
+    <?php } else { ?>
+        <div style="margin-top: 10pc;" class=" alert alert-warning alert-dismissible fade show" role="alert">
+            <strong><?php echo $num; ?></strong> Aucune écriture correspondant au compte.
+        </div>
+    <?php } ?>
+    <footer class=" footer" style="max-height: 50px;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 text-center text-lg-start my-auto h-100">

@@ -10,7 +10,7 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
+                        <!-- <th scope="col">#</th> -->
                         <th scope="col">numéro</th>
                         <th scope="col">Intitulé</th>
                     </tr>
@@ -18,8 +18,8 @@
                 <tbody>
                     <?php foreach ($liste_compte as $view) { ?>
                         <tr>
-                            <th scope="row"><?php echo $view['id'] ?></th>
-                            <td><?php echo $view['numero'] ?></td>
+                            <!-- <th scope="row"><?php echo $view['id'] ?></th> -->
+                            <td> <a href="<?php echo site_url("livreC/liste_mouvement?num=". $view['numero']) ?>"><?php echo $view['numero'] ?></a></td>
                             <td><?php echo $view['intitule'] ?></td>
                         </tr>
                     <?php } ?>

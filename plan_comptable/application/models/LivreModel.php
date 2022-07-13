@@ -36,8 +36,8 @@
 
         public function read_mouvement($idexo,$num = null)
         {
-            $sql = "SELECT * from View_grandlivre where idexo=%s and num_compte like %s order by num_compte asc";
-            $sql = sprintf($sql, $this->db->escape($idexo), $this->db->escape($num.'%'));
+            $sql = "SELECT * from View_grandlivre where idexo=%s and num_compte=%s order by num_compte asc";
+            $sql = sprintf($sql, $this->db->escape($idexo), $this->db->escape($num));
             $query = $this->db->query($sql);
             return $query->result_array();
         }
