@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://monsitelocal/S4/plan_comptable/';
+$config['base_url'] = 'http://monsitelocal/S3-/SI-Trio/plan_comptable/';
 
 /*
 |--------------------------------------------------------------------------
