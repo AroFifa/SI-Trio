@@ -26,8 +26,8 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Nom</th>
-                        <th scope="col">Numéro</th>
-                        <th scope="col">Intitulé</th>
+                        <!-- <th scope="col">Numéro</th>
+                        <th scope="col">Intitulé</th> -->
                         <!-- <th scope="col">Compte</th>
                         <th scope="col">Intitulé</th> -->
                     </tr>
@@ -37,8 +37,6 @@
                         <tr>
                             <th scope="row"><?php echo $view['identifiant'] ?></th>
                             <td><?php echo $view['nom'] ?></td>
-                            <td><?php echo $view['numero'] ?></td>
-                            <td><?php echo $view['intitule'] ?></td>
                         </tr>
                     <?php } ?>
                 </tbody>
