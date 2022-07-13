@@ -27,6 +27,44 @@ class EtatFinancierC extends CI_Controller
 
         $this->load->view('etatFinancier/bilan', $data);
     }
+    
     public function resultat(){
+        $this->load->model('Resultat');
+
+        $data['exo'] = $this->session->exo;
+
+
+        $data['chiffreaffaire'] = $this->Resultat->getchiffreaffaire($this->session->exo);
+        $data['productionstockee'] = $this->Resultat->getproductionstockee($this->session->exo);
+
+        $data['achatconsommes'] = $this->Resultat->getachatconsommes($this->session->exo);
+        $data['serviceexterieur'] = $this->Resultat->getservicesexterieursetautreconsommations($this->session->exo);
+
+        $data['consommationexercice'] = $this->Resultat->getconsommationexercice($this->session->exo);
+
+        $data['chargespersonnel'] = $this->Resultat->getchargespersonnel($this->session->exo);
+        $data['impotstaxes'] = $this->Resultat->getimpotstaxes($this->session->exo);
+
+        $data['autresproduitoperationels'] = $this->Resultat->getautresproduitoperationels($this->session->exo);
+        $data['autrechargesoperationels'] = $this->Resultat->getautrechargesoperationels($this->session->exo);
+        $data['dotationamortissements'] = $this->Resultat->getdotationamortissements($this->session->exo);
+        $data['repriseprovision'] = $this->Resultat->getrepriseprovision($this->session->exo);
+
+        $data['produitfinanciers'] = $this->Resultat->getproduitfinanciers($this->session->exo);
+        $data['chargesfinancieres'] = $this->Resultat->getchargesfinancieres($this->session->exo);
+
+        $data['resultatfinancier'] = $this->Resultat->getresultatfinancier($this->session->exo);
+
+        $data['impotsexigiblessurresultat'] = $this->Resultat->getimpotsexigiblessurresultat($this->session->exo);
+        $data['impotsdifferes'] = $this->Resultat->getimpotsdifferes($this->session->exo);
+
+        $data['elementsextraordinaireproduits'] = $this->Resultat->getelementsextraordinaireproduits($this->session->exo);
+        $data['elementsextraordinairecharges'] = $this->Resultat->getelementsextraordinairecharges($this->session->exo);
+
+        $data['resultatextraordinaire'] = $this->Resultat->getresultatextraordinaire($this->session->exo);
+
+        $data['resultatnetexercice'] = $this->Resultat->getresultatnetexercice($this->session->exo);
+
+        // Load View Resultat
     }
 }
