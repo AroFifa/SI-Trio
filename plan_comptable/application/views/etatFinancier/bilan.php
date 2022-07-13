@@ -52,8 +52,8 @@
 
         </div>
         <div class="row">
-            <div class="col-md-5" style="background-color: #eee; border-radius: 30px; padding: 20px;">
-                <table class="table">
+            <div class="col-md-6">
+                <table class="table table-light">
                     <thead>
                         <tr>
                             <th>ACTIF </th>
@@ -63,7 +63,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <th>ACTIFS NON-COURANTS</th>
+                            <td class="table-active">ACTIFS NON-COURANTS</td>
                         </tr>
                         <?php foreach ($actifs_noncourants as $view) { ?>
 
@@ -76,15 +76,14 @@
                         <tr>
                             <th>TOTAL ACTIFS NON-COURANTS </th>
                             <th></th>
-                            <th><?php echo $SANC; ?></th>
+                            <th class="table-active"><?php echo $SANC; ?></th>
                         </tr>
                         <tr>
                             <th></th>
                         </tr>
                         </tr>
                         <tr>
-                            <br>
-                            <th>ACTIFS COURANTS</th>
+                            <td class="table-active">ACTIFS COURANTS</td>
                         </tr>
                         <?php foreach ($actifs_courants as $view) { ?>
 
@@ -97,15 +96,15 @@
                         <tr>
                             <th>TOTAL ACTIFS COURANTS</th>
                             <th></th>
-                            <th><?php echo $SAC; ?></th>
+                            <th class="table-active"><?php echo $SAC; ?></th>
                         </tr>
                         <tr>
                             <th></th>
                         </tr>
                         <tr>
-                            <th>TOTAL DES ACTIFS</th>
+                            <td class="table-active">TOTAL DES ACTIFS</td>
                             <th></th>
-                            <th><?php echo $SANC + $SAC; ?></th>
+                            <th class="table-active"><?php echo $SANC + $SAC; ?></th>
                         </tr>
                         <tr>
                             <th></th>
@@ -116,8 +115,8 @@
                     </tbody>
                 </table>
             </div>
-            <div class="col-md-5 offset-md-2" style="background-color: #eee; border-radius: 30px; padding: 20px;">
-                <table class="table">
+            <div class="col-md-6">
+                <table class="table table-light">
                     <thead>
                         <tr>
                             <th>PASSIF </th>
@@ -127,7 +126,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <th>CAPITAUX PROPRES</th>
+                            <td class="table-active">CAPITAUX PROPRES</td>
                         </tr>
                         <?php foreach ($capitaux as $view) { ?>
 
@@ -140,7 +139,7 @@
                         <tr>
                             <th>TOTAL DES CAPITAUX PROPRES </th>
                             <th></th>
-                            <th><?php echo $SCP; ?></th>
+                            <th class="table-active"><?php echo $SCP; ?></th>
                         </tr>
                         <tr>
                             <th></th>
@@ -149,7 +148,7 @@
                             <th></th>
                         </tr>
                         <tr>
-                            <th>PASSIFS NON-COURANTS</th>
+                            <td class="table-active">PASSIFS NON-COURANTS</td>
                         </tr>
                         <?php foreach ($passifs_noncourants as $view) { ?>
 
@@ -162,13 +161,13 @@
                         <tr>
                             <th>TOTAL PASSIFS NON-COURANTS </th>
                             <th></th>
-                            <th><?php echo $SPNC; ?></th>
+                            <th class="table-active"><?php echo $SPNC; ?></th>
                         </tr>
                         <tr>
                         <tr>
                             <th></th>
                         </tr>
-                        <th>PASSIFS COURANTS</th>
+                        <td class="table-active">PASSIFS COURANTS</td>
                         </tr>
                         <?php foreach ($passifs_courants as $view) { ?>
 
@@ -181,7 +180,7 @@
                         <tr>
                             <th>TOTAL PASSIFS COURANTS </th>
                             <th></th>
-                            <th><?php echo $SPC; ?></th>
+                            <th class="table-active"><?php echo $SPC; ?></th>
                         </tr>
                         <tr>
                             <th></th>
@@ -190,7 +189,7 @@
                             <th></th>
                         </tr>
                         <tr>
-                            <th>TOTAL DES PASSIFS</th>
+                            <td class="table-active">TOTAL DES PASSIFS</td>
                             <th></th>
                             <th><?php echo $SPNC + $SPC + $SCP; ?></th>
                         </tr>
