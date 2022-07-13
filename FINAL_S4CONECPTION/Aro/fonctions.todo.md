@@ -45,4 +45,4 @@
         -   lister les comptes 7
         -   lister les comptes 6
 
-*   Générer PDF de ce document **([Ioty](#))**
+*   Générer PDF de ce document (non prioritaire) **([Ioty](#))**
